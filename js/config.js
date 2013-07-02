@@ -17,6 +17,7 @@ var require = {
       deps: ['jquery'],  // force use of real jQuery
       exports: 'angular'
     },
+    'angular-resource': ['angular'],
     'angular-sanitize': ['angular'],
     'angular-dragdrop': {
       deps: ['jquery.ui', 'angular'],
