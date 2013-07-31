@@ -23,7 +23,8 @@ var require = {
       deps: ['jquery.ui', 'angular'],
       exports: 'jqyoui'
     },
-    'angular-ui-select2': ['select2', 'angular']
+    'angular-ui-select2': ['select2', 'angular'],
+    'angular-scrollevents': ['angular']
   }
 };
 
