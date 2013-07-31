@@ -25,7 +25,8 @@ var require = {
       exports: 'jqyoui'
     },
     'angular-ui-select2': ['select2', 'angular'],
-    'angular-scrollevents': ['angular']
+    'angular-scrollevents': ['angular'],
+    'stellar.directives': ['angular', 'jquery.stellar']
   }
 };
 
