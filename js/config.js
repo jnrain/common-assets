@@ -9,6 +9,7 @@ var require = {
   shim: {
     'jquery.ui': ['jquery'],
     'jquery.backstretch': ['jquery'],
+    'jquery.stellar': ['jquery'],
     'garlic': ['jquery'],
     'parsley': ['jquery'],
     'supersized.core': ['jquery'],
