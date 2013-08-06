@@ -19,6 +19,7 @@ var require = (function() {
       'parsley': [JQUERY],
       'supersized.core': [JQUERY],
       'select2': [JQUERY],
+      'waypoints': [JQUERY],
 
       // AngularJS components
       NG: {
