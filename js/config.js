@@ -21,7 +21,8 @@ var require = (function() {
             'waypoints': [JQUERY],
 
             // AngularJS components
-            NG: {
+            // the name NG is NOT a variable here!!!
+            'angular': {
               deps: [JQUERY],  // force use of real jQuery
               exports: NG
             },
