@@ -9,16 +9,16 @@
           var fn = $parse(attr.ngScrollEvent);
     
             var interval,
-						handler,
+            handler,
             el = element[0],
-						scrollEvent = 'scroll.ngscrollevent',
+            scrollEvent = 'scroll.ngscrollevent',
             scrollPosition = {
                 x: 0,
                 y: 0
             };
     
             var bindScroll = function() {
-								handler = function(event) {
+                handler = function(event) {
                     scrollPosition.x = el.scrollLeft;
                     scrollPosition.y = el.scrollTop;
     
@@ -44,7 +44,7 @@
             };
     
             var unbindScroll = function() {
-								// be nice to others, don't unbind their scroll handlers
+                // be nice to others, don't unbind their scroll handlers
                 element.unbind(scrollEvent, handler);
             };
     
