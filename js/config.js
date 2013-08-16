@@ -33,6 +33,7 @@ var require = (function() {
               exports: 'jqyoui'
             },
             'angular-ui-select2': ['select2', NG],
+            'angular-smoothscroll': [JQUERY, NG],
             // Socket.IO.js is AMD-compatible
             'angular-socketio': ['socket.io', NG],
             'angular-scrollevents': [NG],
