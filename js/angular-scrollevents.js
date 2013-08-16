@@ -1,8 +1,8 @@
 (function(angular) {
     'use strict';
-    
+
     var INTERVAL_DELAY = 150;
-  
+
     angular.module('ngScrollEvent', [])
     .directive('ngScrollEvent', ['$parse', '$window', function($parse, $window) {
         return function(scope, element, attr) {
@@ -16,12 +16,19 @@
                 x: 0,
                 y: 0
             },
-            bindTarget = attr.ngScrollEventSource === 'window' ? angular.element($window) : element;
+            isTargetWindow = attr.ngScrollEventSource === 'window',
+            bindTarget = isTargetWindow ? angular.element($window) : element;
     
             var bindScroll = function() {
                 handler = function(event) {
-                    scrollPosition.x = el.scrollLeft;
-                    scrollPosition.y = el.scrollTop;
+                    if (isTargetWindow) {
+                        // TODO: IE compatibility
+                        scrollPosition.x = $window.pageXOffset;
+                        scrollPosition.y = $window.pageYOffset;
+                    } else {
+                        scrollPosition.x = el.scrollLeft;
+                        scrollPosition.y = el.scrollTop;
+                    }
     
                     startInterval(event);
                     unbindScroll();
@@ -33,13 +40,24 @@
     
             var startInterval = function(event) {
                 interval = $window.setInterval(function() {
-                    if(scrollPosition.x == el.scrollLeft && scrollPosition.y == el.scrollTop) {
+                    var currX, currY;
+
+                    if (isTargetWindow) {
+                        // TODO: IE compatibility
+                        currX = $window.pageXOffset;
+                        currY = $window.pageYOffset;
+                    } else {
+                        currX = el.scrollLeft;
+                        currY = el.scrollTop;
+                    }
+
+                    if (scrollPosition.x == currX && scrollPosition.y == currY) {
                         $window.clearInterval(interval);
                         bindScroll();
                         scrollTrigger(event, true);
                     } else {
-                        scrollPosition.x = el.scrollLeft;
-                        scrollPosition.y = el.scrollTop;
+                        scrollPosition.x = currX;
+                        scrollPosition.y = currY;
                     }
                 }, INTERVAL_DELAY);
             };
@@ -59,3 +77,6 @@
         };
     }]);
 })(angular);
+
+
+// vim:set ai et ts=4 sw=4 sts=4 fenc=utf-8:
