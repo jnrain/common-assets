@@ -7,7 +7,7 @@
     .directive('ngScrollEvent', ['$parse', '$window', function($parse, $window) {
         return function(scope, element, attr) {
           var fn = $parse(attr.ngScrollEvent);
-    
+
             var interval,
             handler,
             el = element[0],
@@ -15,7 +15,8 @@
             scrollPosition = {
                 x: 0,
                 y: 0
-            };
+            },
+            bindTarget = attr.ngScrollEventSource === 'window' ? $window : element;
     
             var bindScroll = function() {
                 handler = function(event) {
@@ -27,7 +28,7 @@
                     scrollTrigger(event, false);
                 };
 
-                element.bind(scrollEvent, handler);
+                bindTarget.bind(scrollEvent, handler);
             };
     
             var startInterval = function(event) {
@@ -45,7 +46,7 @@
     
             var unbindScroll = function() {
                 // be nice to others, don't unbind their scroll handlers
-                element.unbind(scrollEvent, handler);
+                bindTarget.unbind(scrollEvent, handler);
             };
     
             var scrollTrigger = function(event, isEndEvent) {
