@@ -16,7 +16,7 @@
                 x: 0,
                 y: 0
             },
-            bindTarget = attr.ngScrollEventSource === 'window' ? $window : element;
+            bindTarget = attr.ngScrollEventSource === 'window' ? angular.element($window) : element;
     
             var bindScroll = function() {
                 handler = function(event) {
