@@ -38,7 +38,13 @@ var require = (function() {
             'angular-socketio': ['socket.io', NG],
             'angular-scrollevents': [NG],
             'stellar.directives': [NG, 'jquery.stellar'],
-            'ui.jq': [JQUERY, NG]
+            'ui.jq': [JQUERY, NG],
+
+            // other libraries
+            'd3.v3': {
+              deps: [],
+              exports: 'd3'
+            }
           }
         };
 
