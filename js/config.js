@@ -44,6 +44,9 @@ var require = (function() {
             'd3.v3': {
               deps: [],
               exports: 'd3'
+            },
+            'qrcode': {
+              exports: 'QRCode'
             }
           }
         };
