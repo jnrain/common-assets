@@ -1,7 +1,6 @@
-'use strict';
-
-
 var require = (function() {
+  'use strict';
+
   var JQUERY = 'jquery',
       NG = 'angular',
       result = {
