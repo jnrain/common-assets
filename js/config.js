@@ -14,6 +14,7 @@ var require = (function() {
             'jquery.ui': [JQUERY],
             'jquery.backstretch': [JQUERY],
             'jquery.stellar': [JQUERY],
+            'jquery.transit': [JQUERY],
             'garlic': [JQUERY],
             'parsley': [JQUERY],
             'supersized.core': [JQUERY],
