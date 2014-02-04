@@ -13,6 +13,7 @@ var require = (function() {
             'jquery.ui': [JQUERY],
             'jquery.backstretch': [JQUERY],
             'jquery.fullscreen': [JQUERY],
+            'jquery.knob': [JQUERY],
             'jquery.stellar': [JQUERY],
             'jquery.transit': [JQUERY],
             'garlic': [JQUERY],
