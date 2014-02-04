@@ -12,6 +12,7 @@ var require = (function() {
             // jQuery plugins
             'jquery.ui': [JQUERY],
             'jquery.backstretch': [JQUERY],
+            'jquery.fullscreen': [JQUERY],
             'jquery.stellar': [JQUERY],
             'jquery.transit': [JQUERY],
             'garlic': [JQUERY],
